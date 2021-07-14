@@ -1,0 +1,28 @@
+body {
+  width: 600px;
+  margin: 0 auto;
+
+}
+.vopros {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:aquamarine;
+  padding: 20px;
+}
+.otvet {
+  width: 600px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.variant {
+  width: 100px;
+  height: 40px;
+  background-color: aqua;
+  border-radius: 10px;
+  margin: 20px;
+}
