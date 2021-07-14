@@ -11,6 +11,7 @@ const zadacha = ['Витя прочитал 100 страниц из книги, 
 const variant = [['60%', '55%', '50%', '40%'], ['190', '180', '200', '205'], ['89', '92', '90', '100'], ['65%', '55%', '60%', '40%'], ['6.5', '4.2', '5.5', '6'], ['18', '18.2', '19', '19.9'], ['50', '55', '60', '65'], ['11', '12', '10', '14'], ['10.2','9.7', '11.9', '9.2'], ['86.58 км', '72.95 км', '85.43 км', '87.89 км']];
 let num = 0;
 let bal = 0;
+let massage = '';
 
 
 button1.addEventListener("click", (e) => {
@@ -38,6 +39,7 @@ function test() {
     final();
     return;
   }
+
   vopros.innerHTML = `<p>${zadacha[num]}</p>`;
   button1.innerHTML = `<p>${variant[num][0]}</p>`;
   button2.innerHTML = `<p>${variant[num][1]}</p>`;
@@ -49,16 +51,27 @@ function test() {
 test();
 
 function final() {
+  bal = 0;
   otvet.forEach((item, i) => {
     if(item == pravOtvet[i]) {
       bal += 10;
     }
   });
 
-  vopros.innerHTML = `<p>${bal}</p>`;
+  if(bal == 100) {
+    massage = 'ты гений!!!'; 
+  }else if(bal > 70) {
+    massage = 'хорошо ты молодец!'; 
+  }else {
+    massage = 'попробуй еще раз'; 
+  }
+
+
+  vopros.innerHTML = `<p>${bal} баллов ${massage}</p>`;
   button1.innerHTML = `<p></p>`;
   button2.innerHTML = `<p></p>`;
   button3.innerHTML = `<p></p>`;
   button4.innerHTML = `<p></p>`;
 }
 
+console.log(zadacha.length);
